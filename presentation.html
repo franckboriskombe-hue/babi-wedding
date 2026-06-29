@@ -1,0 +1,1909 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Babi Wedding — Pitch Deck · The African Wedding Ecosystem</title>
+  <meta name="description" content="Pitch Babi Wedding — la wedding tech africaine premium. Conciergerie digitale haut de gamme en Côte d'Ivoire et en Afrique francophone." />
+  <meta name="author" content="Babi Wedding" />
+  <meta name="theme-color" content="#005B4F" />
+
+  <!-- Open Graph (pour partage WhatsApp / email) -->
+  <meta property="og:title" content="Babi Wedding — The African Wedding Ecosystem" />
+  <meta property="og:description" content="Pitch — La conciergerie digitale qui réinvente le mariage africain premium." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1200&auto=format&fit=crop&q=80" />
+
+  <!-- Google Fonts (seule dépendance CDN — fallback systèmes assuré) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Favicon inline (monogramme B doré) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23E0C896'/><stop offset='55%25' stop-color='%23C8A66A'/><stop offset='100%25' stop-color='%239C7E45'/></linearGradient></defs><circle cx='40' cy='40' r='38' fill='%23005B4F'/><text x='40' y='55' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='500' font-size='46' fill='url(%23g)'>B</text></svg>" />
+
+  <style>
+    /* ============================================================
+       BABI WEDDING — PITCH DECK
+       Single-file, offline-first, print-A4-landscape friendly
+       ============================================================ */
+
+    /* ---------- TOKENS (source unique de vérité — copiés du design system) ---------- */
+    :root {
+      --color-emerald: #005B4F;
+      --color-emerald-deep: #003F37;
+      --color-emerald-mist: #E6EEEC;
+      --color-saffron: #E87B24;
+      --color-saffron-deep: #B85F18;
+      --color-saffron-soft: #FCEFE3;
+      --color-ivory: #F8F4ED;
+      --color-ivory-warm: #F2EBDD;
+      --color-ivory-deep: #E8DFCC;
+      --color-champagne: #C8A66A;
+      --color-champagne-light: #E0C896;
+      --color-champagne-deep: #9C7E45;
+      --color-ink: #111111;
+      --color-ink-soft: #2A2A2A;
+      --color-ink-muted: #6B6B6B;
+      --color-white: #FFFFFF;
+
+      --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --tracking-overline: 0.22em;
+      --tracking-wider: 0.12em;
+
+      --gradient-gold: linear-gradient(135deg, #E0C896 0%, #C8A66A 50%, #9C7E45 100%);
+      --gradient-emerald: linear-gradient(135deg, #005B4F 0%, #003F37 100%);
+      --gradient-hero: linear-gradient(180deg, rgba(17,17,17,0.15) 0%, rgba(17,17,17,0.45) 50%, rgba(17,17,17,0.85) 100%);
+
+      --shadow-card: 0 18px 40px rgba(17,17,17,0.08), 0 6px 12px rgba(17,17,17,0.04);
+      --shadow-gold: 0 20px 50px rgba(200,166,106,0.22);
+    }
+
+    /* ---------- RESET ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--color-ink);
+      background: var(--color-ivory-warm);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4, h5, h6, p, ul, ol { margin: 0; padding: 0; }
+    ul, ol { list-style: none; }
+
+    /* ---------- DECK LAYOUT ---------- */
+    .deck {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1.414 / 1; /* A4 landscape ratio */
+      min-height: 640px;
+      background: var(--color-ivory);
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .slide__inner {
+      flex: 1;
+      padding: clamp(40px, 5vw, 72px) clamp(40px, 6vw, 88px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .slide__footer {
+      position: absolute;
+      bottom: 22px;
+      left: clamp(40px, 6vw, 88px);
+      right: clamp(40px, 6vw, 88px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-ink-muted);
+      z-index: 3;
+    }
+    .slide__footer .pg { color: var(--color-champagne-deep); font-weight: 600; }
+    .slide__footer .brand-mark { display: flex; align-items: center; gap: 8px; }
+    .slide__footer .brand-mark svg { width: 14px; height: 14px; }
+    .slide--dark .slide__footer { color: rgba(248,244,237,0.55); }
+    .slide--dark .slide__footer .pg { color: var(--color-champagne-light); }
+
+    /* ---------- TYPO HELPERS ---------- */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gradient-gold);
+    }
+    .slide--dark .eyebrow { color: var(--color-champagne-light); }
+
+    .display-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(40px, 5.2vw, 76px);
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--color-ink);
+      margin-top: 14px;
+    }
+    .display-title em { font-style: italic; color: var(--color-emerald); font-weight: 500; }
+    .slide--dark .display-title { color: var(--color-ivory); }
+    .slide--dark .display-title em { color: var(--color-champagne-light); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: clamp(32px, 3.6vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--color-ink);
+      margin-top: 14px;
+    }
+    .section-title em { font-style: italic; color: var(--color-emerald); }
+    .slide--dark .section-title { color: var(--color-ivory); }
+    .slide--dark .section-title em { color: var(--color-champagne-light); }
+
+    .lede {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(18px, 1.6vw, 24px);
+      line-height: 1.4;
+      color: var(--color-ink-soft);
+      margin-top: 18px;
+      max-width: 760px;
+    }
+    .slide--dark .lede { color: rgba(248,244,237,0.85); }
+
+    .body-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--color-ink-soft);
+      max-width: 680px;
+    }
+    .slide--dark .body-text { color: rgba(248,244,237,0.85); }
+
+    .gold-rule {
+      width: 56px;
+      height: 2px;
+      background: var(--gradient-gold);
+      border: 0;
+      margin: 22px 0;
+    }
+
+    /* ---------- WORDMARK / LOGO (INLINE SVG) ---------- */
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .wordmark__star {
+      width: 28px;
+      height: 28px;
+      flex: none;
+    }
+    .wordmark__text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .wordmark__babi {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 38px;
+      color: var(--color-emerald);
+      letter-spacing: -0.01em;
+    }
+    .wordmark__sep {
+      height: 1px;
+      width: 100%;
+      background: var(--gradient-gold);
+      margin: 4px 0;
+    }
+    .wordmark__wed {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.55em;
+      color: var(--color-ink);
+      padding-left: 2px;
+    }
+    .slide--dark .wordmark__babi { color: var(--color-champagne-light); }
+    .slide--dark .wordmark__wed { color: var(--color-ivory); }
+
+    /* ============================================================
+       SLIDE 1 — COVER
+       ============================================================ */
+    .slide--cover {
+      background: var(--color-ink);
+      color: var(--color-ivory);
+    }
+    .slide--cover .slide__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .slide--cover .slide__bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85) contrast(1.05);
+    }
+    .slide--cover .slide__overlay {
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-hero);
+      z-index: 2;
+    }
+    .slide--cover .slide__inner { color: var(--color-ivory); z-index: 3; }
+    .slide--cover .wordmark__babi { color: var(--color-champagne-light); }
+    .slide--cover .wordmark__wed { color: var(--color-ivory); }
+    .slide--cover .display-title { color: var(--color-ivory); }
+    .slide--cover .display-title em { color: var(--color-champagne-light); }
+    .slide--cover .eyebrow { color: var(--color-champagne-light); }
+    .slide--cover .lede { color: rgba(248,244,237,0.92); }
+
+    .cover-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: auto;
+      padding-top: 48px;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .cover-meta__block {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: rgba(248,244,237,0.7);
+    }
+    .cover-meta__block strong {
+      display: block;
+      font-weight: 600;
+      color: var(--color-champagne-light);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* ============================================================
+       SLIDE 2 — PROBLÈME (10 frictions, 2 colonnes)
+       ============================================================ */
+    .friction-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px 44px;
+      margin-top: 32px;
+    }
+    .friction-col h4 {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-emerald);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--color-ivory-deep);
+    }
+    .friction-list { display: flex; flex-direction: column; gap: 12px; }
+    .friction-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+    .friction-item__num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--color-champagne-deep);
+      line-height: 1.2;
+    }
+    .friction-item__text {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+    }
+    .friction-item__text strong { font-weight: 600; color: var(--color-ink); }
+
+    /* ============================================================
+       SLIDE 3 — BIG IDEA
+       ============================================================ */
+    .big-idea {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      align-items: center;
+      flex: 1;
+    }
+    .big-idea__quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.1;
+      color: var(--color-emerald);
+      letter-spacing: -0.015em;
+    }
+    .big-idea__quote::before {
+      content: "“";
+      display: block;
+      font-size: 100px;
+      line-height: 0.5;
+      color: var(--color-champagne);
+      margin-bottom: 24px;
+    }
+    .big-idea__pillars { display: flex; flex-direction: column; gap: 18px; }
+    .big-idea__pillar {
+      padding: 16px 18px;
+      background: var(--color-white);
+      border-left: 3px solid var(--color-champagne);
+      border-radius: 0 6px 6px 0;
+    }
+    .big-idea__pillar h5 {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-emerald);
+      margin-bottom: 6px;
+    }
+    .big-idea__pillar p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+    }
+
+    /* ============================================================
+       SLIDE 4 — PARCOURS 6 ÉTAPES
+       ============================================================ */
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+      position: relative;
+    }
+    .journey::before {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: 32px;
+      right: 32px;
+      height: 1px;
+      background: var(--gradient-gold);
+      opacity: 0.5;
+      z-index: 0;
+    }
+    .journey-step {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+    .journey-step__num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--color-ivory);
+      border: 2px solid var(--color-champagne);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--color-champagne-deep);
+    }
+    .journey-step h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 19px;
+      color: var(--color-emerald);
+      margin-bottom: 6px;
+    }
+    .journey-step p {
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--color-ink-muted);
+    }
+
+    /* ============================================================
+       SLIDE 5 — PACKS
+       ============================================================ */
+    .packs-table {
+      margin-top: 28px;
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    .packs-table th,
+    .packs-table td {
+      padding: 14px 16px;
+      text-align: left;
+      vertical-align: middle;
+    }
+    .packs-table thead th {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-emerald);
+      border-bottom: 1px solid var(--color-ivory-deep);
+    }
+    .packs-table thead th:first-child { color: var(--color-ink-muted); }
+    .packs-table tbody tr { transition: background 0.2s; }
+    .packs-table tbody tr + tr td { border-top: 1px solid var(--color-ivory-deep); }
+    .packs-table tbody th {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 17px;
+      color: var(--color-emerald);
+      width: 22%;
+      border-top: 1px solid var(--color-ivory-deep);
+    }
+    .packs-table tbody th small {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-ink-muted);
+      margin-top: 4px;
+    }
+    .pack-cell {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-ink-soft);
+    }
+    .pack-cell strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--color-ink);
+      margin-bottom: 2px;
+    }
+    .pack-cell--prestige strong { color: var(--color-champagne-deep); }
+    .packs-note {
+      margin-top: 18px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--color-ink-muted);
+    }
+    .packs-note strong { color: var(--color-emerald); font-style: normal; font-weight: 600; }
+
+    /* ============================================================
+       SLIDE 6 — MODÈLE ÉCONOMIQUE
+       ============================================================ */
+    .phases {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .phase-card {
+      background: var(--color-white);
+      border-radius: 8px;
+      padding: 28px 24px;
+      border-top: 3px solid var(--color-champagne);
+      box-shadow: 0 4px 14px rgba(17,17,17,0.04);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .phase-card:nth-child(2) { border-top-color: var(--color-emerald); }
+    .phase-card:nth-child(3) { border-top-color: var(--color-saffron); }
+    .phase-card__num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0;
+      color: var(--color-champagne-deep);
+      margin-bottom: 4px;
+    }
+    .phase-card__period {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-ink-muted);
+      margin-bottom: 14px;
+    }
+    .phase-card__title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 22px;
+      color: var(--color-emerald);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .phase-card__desc {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--color-ink-soft);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .phase-card__rev {
+      padding-top: 14px;
+      border-top: 1px solid var(--color-ivory-deep);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-ink);
+      line-height: 1.55;
+    }
+    .phase-card__rev em {
+      display: block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--color-champagne-deep);
+      margin-bottom: 6px;
+    }
+
+    /* ============================================================
+       SLIDE 7 — UNIVERS DE MARQUE
+       ============================================================ */
+    .brand-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 36px;
+      margin-top: 32px;
+      align-items: start;
+    }
+    .brand-block h4 {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-emerald);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--color-ivory-deep);
+    }
+    .palette { display: flex; flex-direction: column; gap: 10px; }
+    .swatch {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 8px 4px;
+    }
+    .swatch__chip {
+      width: 48px;
+      height: 48px;
+      border-radius: 6px;
+      border: 1px solid rgba(17,17,17,0.06);
+    }
+    .swatch__name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--color-ink);
+    }
+    .swatch__hex {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--color-ink-muted);
+    }
+    .typo-spec h5 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 28px;
+      color: var(--color-emerald);
+      margin-bottom: 4px;
+      line-height: 1;
+    }
+    .typo-spec h5.sans {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+    }
+    .typo-spec p {
+      font-size: 12px;
+      color: var(--color-ink-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .pillars-list { display: flex; flex-direction: column; gap: 14px; }
+    .pillar-item {
+      padding: 14px 16px;
+      background: var(--color-emerald-mist);
+      border-radius: 6px;
+    }
+    .pillar-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--color-emerald);
+      margin-bottom: 4px;
+    }
+    .pillar-item span {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+    }
+
+    /* ============================================================
+       SLIDE 8 — CONCURRENCE
+       ============================================================ */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .comp-card {
+      background: var(--color-white);
+      padding: 16px 18px;
+      border-radius: 6px;
+      border: 1px solid var(--color-ivory-deep);
+    }
+    .comp-card__country {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-deep);
+      margin-bottom: 6px;
+    }
+    .comp-card h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--color-emerald);
+      margin-bottom: 4px;
+    }
+    .comp-card p {
+      font-size: 12px;
+      line-height: 1.4;
+      color: var(--color-ink-muted);
+    }
+    .diff-banner {
+      margin-top: 28px;
+      padding: 24px 32px;
+      background: var(--gradient-emerald);
+      color: var(--color-ivory);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .diff-banner__label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-light);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+    .diff-banner p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.3;
+      color: var(--color-ivory);
+    }
+    .diff-banner p strong { font-style: normal; color: var(--color-champagne-light); }
+
+    /* ============================================================
+       SLIDE 9 — SOUS-MARQUES (5 cartes)
+       ============================================================ */
+    .ecosystem {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 36px;
+    }
+    .eco-card {
+      background: var(--color-white);
+      border-radius: 8px;
+      padding: 22px 18px;
+      border-top: 3px solid var(--color-champagne);
+      display: flex;
+      flex-direction: column;
+      min-height: 260px;
+    }
+    .eco-card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-emerald-mist);
+      color: var(--color-emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .eco-card__tier {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-deep);
+      margin-bottom: 6px;
+    }
+    .eco-card h4 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--color-emerald);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .eco-card p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+    }
+
+    /* ============================================================
+       SLIDE 10 — VISION 5 ANS
+       ============================================================ */
+    .slide--vision {
+      background: var(--color-emerald);
+      color: var(--color-ivory);
+      position: relative;
+      overflow: hidden;
+    }
+    .slide--vision .slide__bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image:
+        radial-gradient(circle at 20% 30%, var(--color-champagne) 0, transparent 1px),
+        radial-gradient(circle at 60% 70%, var(--color-champagne) 0, transparent 1px),
+        radial-gradient(circle at 80% 20%, var(--color-champagne) 0, transparent 1px);
+      background-size: 200px 200px;
+    }
+    .slide--vision .slide__inner { z-index: 2; position: relative; }
+
+    .ambitions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .ambition {
+      border-top: 2px solid var(--color-champagne);
+      padding-top: 22px;
+    }
+    .ambition__num {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--color-champagne-light);
+      margin-bottom: 8px;
+    }
+    .ambition h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 26px;
+      color: var(--color-ivory);
+      margin-bottom: 10px;
+      line-height: 1.15;
+    }
+    .ambition p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: rgba(248,244,237,0.8);
+    }
+
+    /* ============================================================
+       SLIDE 11 — APERÇU MAQUETTE
+       ============================================================ */
+    .pages-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .page-tile {
+      background: var(--color-white);
+      border-radius: 6px;
+      border: 1px solid var(--color-ivory-deep);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 130px;
+    }
+    .page-tile__url {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--color-champagne-deep);
+      margin-bottom: 6px;
+    }
+    .page-tile h5 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 17px;
+      color: var(--color-emerald);
+      margin-bottom: 6px;
+    }
+    .page-tile p {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--color-ink-muted);
+    }
+    .links-banner {
+      margin-top: 28px;
+      padding: 20px 28px;
+      background: var(--color-ink);
+      color: var(--color-ivory);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .links-banner__block { display: flex; flex-direction: column; gap: 4px; }
+    .links-banner__label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-light);
+    }
+    .links-banner__url {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-ivory);
+      word-break: break-all;
+    }
+
+    /* ============================================================
+       SLIDE 12 — CONTACT
+       ============================================================ */
+    .slide--contact {
+      background: var(--color-ink);
+      color: var(--color-ivory);
+    }
+    .slide--contact .slide__inner { color: var(--color-ivory); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 60px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .next-steps { display: flex; flex-direction: column; gap: 16px; }
+    .next-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid rgba(248,244,237,0.12);
+    }
+    .next-step:last-child { border-bottom: 1px solid rgba(248,244,237,0.12); }
+    .next-step__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--color-champagne);
+      color: var(--color-champagne-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    .next-step h5 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 19px;
+      color: var(--color-ivory);
+      margin-bottom: 4px;
+    }
+    .next-step p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(248,244,237,0.7);
+    }
+    .contact-card {
+      background: var(--color-emerald-deep);
+      border-radius: 10px;
+      padding: 32px 28px;
+      border: 1px solid rgba(200,166,106,0.25);
+    }
+    .contact-card h4 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 28px;
+      color: var(--color-champagne-light);
+      margin-bottom: 4px;
+      line-height: 1.1;
+    }
+    .contact-card .signature {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(248,244,237,0.7);
+      margin-bottom: 24px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(200,166,106,0.18);
+    }
+    .contact-row:last-child { border-bottom: 1px solid rgba(200,166,106,0.18); }
+    .contact-row__label {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: var(--tracking-overline);
+      text-transform: uppercase;
+      color: var(--color-champagne-light);
+      width: 80px;
+      flex: none;
+    }
+    .contact-row__value {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-ivory);
+    }
+    .closing-tagline {
+      margin-top: 28px;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--color-champagne-light);
+      text-align: center;
+    }
+
+    /* ============================================================
+       NAV (ancres minimales en haut)
+       ============================================================ */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248,244,237,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--color-ivory-deep);
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font-sans);
+      font-size: 11px;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+    }
+    .top-nav__brand {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--color-emerald);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .top-nav__brand span {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 9px;
+      letter-spacing: 0.4em;
+      color: var(--color-ink);
+      margin-left: 8px;
+    }
+    .top-nav__hint { color: var(--color-ink-muted); font-weight: 500; }
+    .top-nav__print {
+      padding: 8px 14px;
+      background: var(--color-emerald);
+      color: var(--color-ivory);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: var(--tracking-wider);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .top-nav__print:hover { background: var(--color-emerald-deep); }
+
+    /* ============================================================
+       RESPONSIVE (mobile WhatsApp)
+       ============================================================ */
+    @media (max-width: 900px) {
+      .deck { padding: 12px; }
+      .slide {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding-bottom: 60px;
+      }
+      .slide__inner {
+        padding: 36px 24px;
+      }
+      .slide__footer {
+        left: 24px;
+        right: 24px;
+        bottom: 16px;
+        font-size: 9px;
+      }
+      .top-nav__hint { display: none; }
+      .friction-grid { grid-template-columns: 1fr; gap: 24px; }
+      .big-idea { grid-template-columns: 1fr; gap: 32px; }
+      .big-idea__quote::before { font-size: 70px; }
+      .journey { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .journey::before { display: none; }
+      .phases { grid-template-columns: 1fr; gap: 16px; }
+      .brand-grid { grid-template-columns: 1fr; gap: 28px; }
+      .comp-grid { grid-template-columns: 1fr; }
+      .diff-banner { grid-template-columns: 1fr; }
+      .diff-banner__label { writing-mode: horizontal-tb; transform: none; }
+      .ecosystem { grid-template-columns: 1fr 1fr; }
+      .ambitions { grid-template-columns: 1fr; gap: 28px; }
+      .pages-grid { grid-template-columns: 1fr 1fr; }
+      .links-banner { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .packs-table { font-size: 12px; }
+      .packs-table th, .packs-table td { padding: 10px 8px; }
+      .pack-cell strong { font-size: 16px; }
+      .cover-meta { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+
+    /* ============================================================
+       PRINT — A4 LANDSCAPE
+       ============================================================ */
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+
+    @media print {
+      body { background: var(--color-white); }
+      .deck { padding: 0; max-width: none; }
+      .top-nav { display: none; }
+      .slide {
+        width: 100%;
+        height: 100vh;
+        min-height: 0;
+        margin: 0;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: always;
+        page-break-inside: avoid;
+        break-after: page;
+        break-inside: avoid;
+        aspect-ratio: auto;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .slide:last-child { page-break-after: auto; break-after: auto; }
+      .slide__inner { padding: 36px 56px; }
+      .slide__footer {
+        bottom: 14px;
+        left: 56px;
+        right: 56px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============== TOP NAV (écran uniquement) ============== -->
+  <nav class="top-nav" aria-label="Navigation du pitch">
+    <div class="top-nav__brand">Babi<span>WEDDING — PITCH</span></div>
+    <div class="top-nav__hint">12 slides · faites Cmd/Ctrl + P pour exporter en PDF</div>
+    <button class="top-nav__print" onclick="window.print()">Imprimer / PDF</button>
+  </nav>
+
+  <main class="deck">
+
+    <!-- ========================================================
+         SLIDE 1 — COVER
+         ======================================================== -->
+    <section class="slide slide--cover slide--dark" id="cover">
+      <div class="slide__bg">
+        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=2000&auto=format&fit=crop&q=80"
+             alt="" />
+      </div>
+      <div class="slide__overlay"></div>
+      <div class="slide__inner">
+        <div class="wordmark" style="margin-bottom: 24px;">
+          <svg class="wordmark__star" viewBox="0 0 32 32" aria-hidden="true">
+            <defs>
+              <linearGradient id="gold-cover" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E0C896"/>
+                <stop offset="55%" stop-color="#C8A66A"/>
+                <stop offset="100%" stop-color="#9C7E45"/>
+              </linearGradient>
+            </defs>
+            <path d="M16 0 L18.5 13.5 L32 16 L18.5 18.5 L16 32 L13.5 18.5 L0 16 L13.5 13.5 Z" fill="url(#gold-cover)"/>
+          </svg>
+          <span class="wordmark__text">
+            <span class="wordmark__babi">Babi</span>
+            <span class="wordmark__sep"></span>
+            <span class="wordmark__wed">WEDDING</span>
+          </span>
+        </div>
+
+        <span class="eyebrow">The African Wedding Ecosystem</span>
+        <h1 class="display-title">
+          Babi Wedding<br/>
+          <em>Pitch — Décembre 2025</em>
+        </h1>
+        <p class="lede">
+          La conciergerie digitale qui réinvente le mariage africain premium. Un mariage clé en main, conçu selon votre budget — du civil au religieux.
+        </p>
+
+        <div class="cover-meta">
+          <div class="cover-meta__block">
+            <strong>Catégorie</strong>
+            Wedding Tech · Premium
+          </div>
+          <div class="cover-meta__block">
+            <strong>Marché</strong>
+            Côte d'Ivoire · Afrique francophone
+          </div>
+          <div class="cover-meta__block">
+            <strong>Phase</strong>
+            Conciergerie — Lancement
+          </div>
+          <div class="cover-meta__block">
+            <strong>Auteur</strong>
+            Franck Boris Kombe
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · CONFIDENTIEL</span>
+        <span class="pg">01 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 2 — LE PROBLÈME
+         ======================================================== -->
+    <section class="slide" id="problem">
+      <div class="slide__inner">
+        <span class="eyebrow">Le constat</span>
+        <h2 class="section-title">
+          Le marché ivoirien du mariage<br/>
+          a <em>10 frictions</em> majeures.
+        </h2>
+        <p class="lede" style="font-size: 16px;">
+          Un secteur encore artisanal, fragmenté, opaque — là où l'attente est désormais d'avoir une expérience digne d'une vraie conciergerie.
+        </p>
+
+        <div class="friction-grid">
+          <div class="friction-col">
+            <h4>Côté mariés</h4>
+            <ol class="friction-list">
+              <li class="friction-item">
+                <span class="friction-item__num">01</span>
+                <span class="friction-item__text"><strong>Aucune visibilité prix.</strong> Impossible d'anticiper le coût réel d'un mariage avant des semaines de devis.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">02</span>
+                <span class="friction-item__text"><strong>Recherche éclatée</strong> sur Instagram, bouche-à-oreille, WhatsApp — aucun point d'entrée unique.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">03</span>
+                <span class="friction-item__text"><strong>Stress de coordination.</strong> Le couple devient chef de projet à temps plein, sans méthode.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">04</span>
+                <span class="friction-item__text"><strong>Pas de garantie qualité</strong> — prestataires recommandés sans filtre, ni recours en cas de défaut.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">05</span>
+                <span class="friction-item__text"><strong>Dépassements budgétaires</strong> systématiques. La promesse initiale ne tient jamais.</span>
+              </li>
+            </ol>
+          </div>
+
+          <div class="friction-col">
+            <h4>Côté prestataires</h4>
+            <ol class="friction-list">
+              <li class="friction-item">
+                <span class="friction-item__num">06</span>
+                <span class="friction-item__text"><strong>Acquisition coûteuse.</strong> Dépendance à Instagram payant et au bouche-à-oreille aléatoire.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">07</span>
+                <span class="friction-item__text"><strong>Saisonnalité brutale.</strong> 80% du chiffre d'affaires sur 4 mois — trésorerie fragile.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">08</span>
+                <span class="friction-item__text"><strong>Faible professionnalisation</strong> du back-office : devis Word, paiements cash, zéro CRM.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">09</span>
+                <span class="friction-item__text"><strong>Marges grignotées</strong> par les intermédiaires informels et les négociations à répétition.</span>
+              </li>
+              <li class="friction-item">
+                <span class="friction-item__num">10</span>
+                <span class="friction-item__text"><strong>Pas d'outil de gestion</strong> intégré (planning, contrats, suivi clients, photos de référence).</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · LE PROBLÈME</span>
+        <span class="pg">02 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 3 — BIG IDEA
+         ======================================================== -->
+    <section class="slide" id="solution" style="background: var(--color-ivory-warm);">
+      <div class="slide__inner">
+        <span class="eyebrow">La solution</span>
+        <h2 class="section-title" style="margin-bottom: 8px;">
+          Notre <em>big idea</em>.
+        </h2>
+
+        <div class="big-idea">
+          <div>
+            <div class="big-idea__quote">
+              Un mariage clé en main,<br/>
+              conçu selon <em>votre budget</em>.
+            </div>
+            <p class="body-text" style="margin-top: 32px;">
+              Babi Wedding n'est <strong>pas un marketplace</strong>. C'est une <strong>conciergerie digitale</strong> : le couple choisit un pack, paie un acompte, reçoit un conseiller dédié. Nous orchestrons tout le reste — prestataires triés, devis transparents, suivi temps réel, jour J sans stress.
+            </p>
+          </div>
+
+          <div class="big-idea__pillars">
+            <div class="big-idea__pillar">
+              <h5>Pack &amp; budget</h5>
+              <p>3 cérémonies × 4 tiers. Le couple sait dès la 1<sup>re</sup> minute combien coûtera son mariage.</p>
+            </div>
+            <div class="big-idea__pillar">
+              <h5>Conseiller dédié</h5>
+              <p>Un humain, pas un chatbot. Un seul point de contact pour 6 à 12 mois d'orchestration.</p>
+            </div>
+            <div class="big-idea__pillar">
+              <h5>Prestataires triés</h5>
+              <p>Réseau fermé, qualité auditée, contrats type, garantie satisfaction Babi Wedding.</p>
+            </div>
+            <div class="big-idea__pillar">
+              <h5>Zéro stress</h5>
+              <p>Planning M-6 → J-0, paiements échelonnés, coordination jour J : nous portons la charge mentale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · BIG IDEA</span>
+        <span class="pg">03 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 4 — PARCOURS 6 ÉTAPES
+         ======================================================== -->
+    <section class="slide" id="journey">
+      <div class="slide__inner">
+        <span class="eyebrow">Le parcours client</span>
+        <h2 class="section-title">
+          De la première idée<br/>
+          au <em>jour J</em> — en 6 étapes.
+        </h2>
+        <p class="body-text" style="margin-top: 16px;">
+          Un tunnel pensé pour les couples qui veulent un mariage à la hauteur, sans devenir wedding planners eux-mêmes.
+        </p>
+
+        <div class="journey">
+          <div class="journey-step">
+            <div class="journey-step__num">1</div>
+            <h4>Quiz</h4>
+            <p>5 questions : cérémonie, budget, invités, ville, style.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step__num">2</div>
+            <h4>Simulation</h4>
+            <p>Estimation budgétaire instantanée, pack recommandé.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step__num">3</div>
+            <h4>RDV WhatsApp</h4>
+            <p>Appel découverte avec un conseiller dédié.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step__num">4</div>
+            <h4>Accompagnement</h4>
+            <p>Sélection prestataires, planning, validations.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step__num">5</div>
+            <h4>Signature</h4>
+            <p>Contrat unique, acompte, paiements échelonnés.</p>
+          </div>
+          <div class="journey-step">
+            <div class="journey-step__num">6</div>
+            <h4>Suivi &amp; jour J</h4>
+            <p>Coordination M-6 → J-0, présence terrain.</p>
+          </div>
+        </div>
+
+        <p class="packs-note" style="margin-top: 36px;">
+          <strong>Le quiz</strong> est déjà en ligne dans la maquette — testable en moins de 90 secondes.
+        </p>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · PARCOURS</span>
+        <span class="pg">04 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 5 — PACKS
+         ======================================================== -->
+    <section class="slide" id="packs" style="background: var(--color-ivory-warm);">
+      <div class="slide__inner">
+        <span class="eyebrow">L'offre</span>
+        <h2 class="section-title">
+          3 cérémonies × 4 tiers.<br/>
+          Une grille tarifaire <em>limpide</em>.
+        </h2>
+
+        <table class="packs-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Bronze</th>
+              <th>Silver</th>
+              <th>Gold</th>
+              <th>Prestige</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Mariage civil<small>Intime · 30 à 80 invités</small></th>
+              <td class="pack-cell"><strong>1,5 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>3 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>5 M</strong>FCFA</td>
+              <td class="pack-cell pack-cell--prestige"><strong>6 M</strong>FCFA</td>
+            </tr>
+            <tr>
+              <th>Mariage traditionnel<small>Dot · 100 à 250 invités</small></th>
+              <td class="pack-cell"><strong>3 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>5 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>10 M</strong>FCFA</td>
+              <td class="pack-cell pack-cell--prestige"><strong>12 M</strong>FCFA</td>
+            </tr>
+            <tr>
+              <th>Mariage religieux<small>Église/mosquée · 200 à 600 invités</small></th>
+              <td class="pack-cell"><strong>6 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>10 M</strong>FCFA</td>
+              <td class="pack-cell"><strong>22 M</strong>FCFA</td>
+              <td class="pack-cell pack-cell--prestige"><strong>25 M+</strong>FCFA</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p class="packs-note">
+          <strong>Combo trois cérémonies</strong> — civil + traditionnel + religieux orchestrés ensemble, à partir de 18 M FCFA. Tarification à la fourchette, ajustée selon ville, saison et nombre d'invités.
+        </p>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · PACKS</span>
+        <span class="pg">05 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 6 — MODÈLE ÉCONOMIQUE 3 PHASES
+         ======================================================== -->
+    <section class="slide" id="business">
+      <div class="slide__inner">
+        <span class="eyebrow">Modèle économique</span>
+        <h2 class="section-title">
+          3 phases, <em>3 moteurs</em> de revenus.
+        </h2>
+        <p class="body-text" style="margin-top: 16px;">
+          On démarre par la conciergerie (le plus rentable, le plus différenciant). On scale ensuite avec une marketplace fermée. On capture toute la chaîne de valeur en phase 3.
+        </p>
+
+        <div class="phases">
+          <div class="phase-card">
+            <div class="phase-card__num">Phase 01</div>
+            <div class="phase-card__period">0 — 18 mois</div>
+            <h3 class="phase-card__title">Conciergerie premium</h3>
+            <p class="phase-card__desc">
+              Vente directe de packs sur-mesure. Le couple paie Babi Wedding, qui orchestre l'ensemble. Marge sur volume avec les prestataires + frais de coordination.
+            </p>
+            <div class="phase-card__rev">
+              <em>Revenus</em>
+              Marge commerciale sur prestataires<br/>
+              + frais de coordination <strong>10 %</strong> du pack
+            </div>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-card__num">Phase 02</div>
+            <div class="phase-card__period">18 — 36 mois</div>
+            <h3 class="phase-card__title">Marketplace fermée</h3>
+            <p class="phase-card__desc">
+              Ouverture aux prestataires triés : ils accèdent au flux Babi Wedding via abonnement. Modèle SaaS récurrent + commission sur transactions.
+            </p>
+            <div class="phase-card__rev">
+              <em>Abonnements annuels</em>
+              Essentiel <strong>150 K</strong> · Premium <strong>300 K</strong> · Elite <strong>600 K</strong> FCFA
+            </div>
+          </div>
+
+          <div class="phase-card">
+            <div class="phase-card__num">Phase 03</div>
+            <div class="phase-card__period">36 mois +</div>
+            <h3 class="phase-card__title">Wedding Super App</h3>
+            <p class="phase-card__desc">
+              L'écosystème complet : liste de mariage digitale, cagnotte, e-commerce cadeaux, magazine, academy. Babi Wedding devient l'infrastructure du mariage africain.
+            </p>
+            <div class="phase-card__rev">
+              <em>Revenus diversifiés</em>
+              Liste de mariage · cagnotte · e-commerce<br/>
+              affiliation · media · formation
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · MODÈLE ÉCONOMIQUE</span>
+        <span class="pg">06 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 7 — UNIVERS DE MARQUE
+         ======================================================== -->
+    <section class="slide" id="brand" style="background: var(--color-ivory-warm);">
+      <div class="slide__inner">
+        <span class="eyebrow">Univers de marque</span>
+        <h2 class="section-title">
+          African Luxury · Modern Romance<br/>
+          <em>Digital Elegance.</em>
+        </h2>
+
+        <div class="brand-grid">
+          <div class="brand-block">
+            <h4>Palette</h4>
+            <div class="palette">
+              <div class="swatch">
+                <div class="swatch__chip" style="background: #005B4F;"></div>
+                <div class="swatch__name">Vert Émeraude</div>
+                <div class="swatch__hex">#005B4F</div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__chip" style="background: #E87B24;"></div>
+                <div class="swatch__name">Orange Safran</div>
+                <div class="swatch__hex">#E87B24</div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__chip" style="background: #F8F4ED;"></div>
+                <div class="swatch__name">Ivoire</div>
+                <div class="swatch__hex">#F8F4ED</div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__chip" style="background: linear-gradient(135deg, #E0C896, #C8A66A, #9C7E45);"></div>
+                <div class="swatch__name">Or Champagne</div>
+                <div class="swatch__hex">#C8A66A</div>
+              </div>
+              <div class="swatch">
+                <div class="swatch__chip" style="background: #111111;"></div>
+                <div class="swatch__name">Noir Profond</div>
+                <div class="swatch__hex">#111111</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-block">
+            <h4>Typographie</h4>
+            <div class="typo-spec">
+              <h5><em>Cormorant Garamond</em></h5>
+              <p>Display · Émotion · Titres</p>
+            </div>
+            <div class="typo-spec">
+              <h5 class="sans">MONTSERRAT</h5>
+              <p>Sans-serif · Corps · UI</p>
+            </div>
+            <p class="body-text" style="font-size: 12.5px; margin-top: 4px;">
+              Le serif italique souligne les moments forts. Le sans-serif assure la lisibilité. Une grammaire éditoriale.
+            </p>
+          </div>
+
+          <div class="brand-block">
+            <h4>3 piliers</h4>
+            <div class="pillars-list">
+              <div class="pillar-item">
+                <strong>African Luxury</strong>
+                <span>Or champagne, motifs bogolan en filigrane, pagnes royaux Akan.</span>
+              </div>
+              <div class="pillar-item">
+                <strong>Modern Romance</strong>
+                <span>Cormorant italique, photographie cinématique portrait.</span>
+              </div>
+              <div class="pillar-item">
+                <strong>Digital Elegance</strong>
+                <span>Grille rigoureuse, micro-interactions douces.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · UNIVERS DE MARQUE</span>
+        <span class="pg">07 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 8 — CONCURRENCE
+         ======================================================== -->
+    <section class="slide" id="competition">
+      <div class="slide__inner">
+        <span class="eyebrow">Le paysage concurrentiel</span>
+        <h2 class="section-title">
+          L'Afrique a des plateformes.<br/>
+          Aucune n'est <em>une conciergerie</em>.
+        </h2>
+
+        <div class="comp-grid">
+          <div class="comp-card">
+            <div class="comp-card__country">Ghana</div>
+            <h4>JanaTribe</h4>
+            <p>Annuaire de prestataires. Modèle marketplace ouverte, aucun accompagnement client.</p>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card__country">Pan-Africain</div>
+            <h4>Vendors Africa</h4>
+            <p>Listing événementiel généraliste. Visibilité large mais friction transactionnelle forte.</p>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card__country">Kenya</div>
+            <h4>Wedding Safi</h4>
+            <p>Annuaire spécialisé mariage. Pas de packaging budget ni d'orchestration.</p>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card__country">Nigeria</div>
+            <h4>Pelbliss</h4>
+            <p>Marketplace de prestataires, modèle freemium. Croissance organique forte mais sans concierge.</p>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card__country">Afrique du Sud</div>
+            <h4>uMshado</h4>
+            <p>Plateforme contenu &amp; vendor list. Premium positionnée mais pas de packs clé en main.</p>
+          </div>
+          <div class="comp-card">
+            <div class="comp-card__country">Côte d'Ivoire</div>
+            <h4>Jour-JI</h4>
+            <p>Acteur local émergent. Approche événementielle, sans grille de packs ni écosystème.</p>
+          </div>
+        </div>
+
+        <div class="diff-banner">
+          <div class="diff-banner__label">Notre différenciateur</div>
+          <p>
+            Babi Wedding n'est <strong>pas un annuaire</strong>. C'est un <strong>guichet unique conciergerie</strong> — packs lisibles, conseiller dédié, garantie satisfaction. Personne d'autre ne le fait en Afrique francophone.
+          </p>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · CONCURRENCE</span>
+        <span class="pg">08 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 9 — SOUS-MARQUES (5 cartes)
+         ======================================================== -->
+    <section class="slide" id="ecosystem" style="background: var(--color-ivory-warm);">
+      <div class="slide__inner">
+        <span class="eyebrow">L'écosystème</span>
+        <h2 class="section-title">
+          Une marque mère,<br/>
+          <em>cinq territoires</em>.
+        </h2>
+        <p class="body-text" style="margin-top: 14px;">
+          Chaque sous-marque verticalise un segment de la chaîne de valeur. La conciergerie d'aujourd'hui, l'infrastructure de demain.
+        </p>
+
+        <div class="ecosystem">
+          <div class="eco-card">
+            <div class="eco-card__icon">C</div>
+            <div class="eco-card__tier">Coeur de métier</div>
+            <h4>Concierge</h4>
+            <p>L'orchestration premium clé en main. Notre offre fondatrice — phase 1.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-card__icon">M</div>
+            <div class="eco-card__tier">Réseau pro</div>
+            <h4>Marketplace</h4>
+            <p>Réseau fermé de prestataires triés, accessibles aux mariés via abonnement.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-card__icon">A</div>
+            <div class="eco-card__tier">Formation</div>
+            <h4>Academy</h4>
+            <p>Formation des wedding planners et prestataires africains. Standardiser le métier.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-card__icon">Mg</div>
+            <div class="eco-card__tier">Media</div>
+            <h4>Magazine</h4>
+            <p>Le media éditorial du mariage africain. Inspiration, tendances, témoignages.</p>
+          </div>
+          <div class="eco-card">
+            <div class="eco-card__icon">P</div>
+            <div class="eco-card__tier">Haut de gamme</div>
+            <h4>Premium</h4>
+            <p>Le sur-mesure absolu pour les mariages d'exception. Direction artistique dédiée.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · ÉCOSYSTÈME</span>
+        <span class="pg">09 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 10 — VISION 5 ANS
+         ======================================================== -->
+    <section class="slide slide--vision slide--dark" id="vision">
+      <div class="slide__bg"></div>
+      <div class="slide__inner">
+        <span class="eyebrow">Vision 5 ans</span>
+        <h2 class="display-title" style="font-size: clamp(36px, 4.5vw, 64px);">
+          Devenir la <em>plateforme<br/>de référence</em> du mariage<br/>
+          en Afrique francophone.
+        </h2>
+
+        <div class="ambitions">
+          <div class="ambition">
+            <div class="ambition__num">01</div>
+            <h4>Digitaliser</h4>
+            <p>Faire passer un secteur encore largement informel à une expérience digitale fluide, transparente, traçable. WhatsApp + plateforme + paiement mobile.</p>
+          </div>
+          <div class="ambition">
+            <div class="ambition__num">02</div>
+            <h4>Professionnaliser</h4>
+            <p>Standardiser la qualité prestataires, former une nouvelle génération de wedding pros, créer des contrats types et des garanties.</p>
+          </div>
+          <div class="ambition">
+            <div class="ambition__num">03</div>
+            <h4>Transformer</h4>
+            <p>Faire du mariage africain un produit culturel premium — célébré, exportable, fier. Un secteur structuré, mature, désirable.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · VISION</span>
+        <span class="pg">10 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 11 — APERÇU MAQUETTE
+         ======================================================== -->
+    <section class="slide" id="preview">
+      <div class="slide__inner">
+        <span class="eyebrow">La maquette · Phase 1</span>
+        <h2 class="section-title">
+          8 pages déjà en ligne.<br/>
+          <em>Testez l'expérience</em>.
+        </h2>
+        <p class="body-text" style="margin-top: 12px;">
+          Tout est construit en HTML/CSS/JS vanilla, sans framework lourd. Démarrage instantané, performance Lighthouse 95+.
+        </p>
+
+        <div class="pages-grid">
+          <div class="page-tile">
+            <div class="page-tile__url">/index.html</div>
+            <h5>Accueil</h5>
+            <p>Hero cinématique, manifesto, parcours 6 étapes, témoignages, sous-marques.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/packs.html</div>
+            <h5>Packs</h5>
+            <p>Grille filtrable 3×4, packs par métier, combo trois cérémonies.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/pack-detail.html</div>
+            <h5>Détail Pack</h5>
+            <p>8 piliers inclus, simulateur de budget interactif, planning M-6 → J-0.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/quiz.html</div>
+            <h5>Quiz</h5>
+            <p>5 étapes interactives. Recommande un pack et un deeplink WhatsApp.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/conciergerie.html</div>
+            <h5>Conciergerie</h5>
+            <p>Philosophie, 3 valeurs, équipe fondatrice, engagement satisfaction, FAQ.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/magazine.html</div>
+            <h5>Magazine</h5>
+            <p>Article à la une, grille de 6 articles, filtres catégorie, newsletter.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/contact.html</div>
+            <h5>Contact</h5>
+            <p>3 canaux (WhatsApp, email, agence), formulaire complet, adresse Cocody.</p>
+          </div>
+          <div class="page-tile">
+            <div class="page-tile__url">/design-system.html</div>
+            <h5>Design System</h5>
+            <p>Showcase visuel : logo, palette, typo, composants, motion, principes.</p>
+          </div>
+        </div>
+
+        <div class="links-banner">
+          <div class="links-banner__block">
+            <span class="links-banner__label">Maquette en ligne</span>
+            <span class="links-banner__url">https://franckboriskombe-hue.github.io/babi-wedding/</span>
+          </div>
+          <div class="links-banner__block">
+            <span class="links-banner__label">Code source</span>
+            <span class="links-banner__url">https://github.com/franckboriskombe-hue/babi-wedding</span>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · APERÇU MAQUETTE</span>
+        <span class="pg">11 / 12</span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SLIDE 12 — CONTACT & NEXT STEPS
+         ======================================================== -->
+    <section class="slide slide--contact slide--dark" id="contact">
+      <div class="slide__inner">
+        <span class="eyebrow">Prochaines étapes</span>
+        <h2 class="display-title" style="font-size: clamp(38px, 4.6vw, 64px);">
+          On lance la phase 1.<br/>
+          <em>Trois choses</em> qu'on cherche.
+        </h2>
+
+        <div class="contact-grid">
+          <div class="next-steps">
+            <div class="next-step">
+              <div class="next-step__icon">1</div>
+              <div>
+                <h5>Vos retours honnêtes</h5>
+                <p>Sur la promesse, le positionnement, la grille tarifaire, l'identité. On veut casser ce qui doit l'être avant le lancement.</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-step__icon">2</div>
+              <div>
+                <h5>Premiers clients pilotes</h5>
+                <p>5 à 10 couples qui se marient dans les 12 prochains mois. Tarif préférentiel, accompagnement renforcé.</p>
+              </div>
+            </div>
+            <div class="next-step">
+              <div class="next-step__icon">3</div>
+              <div>
+                <h5>Partenaires prestataires</h5>
+                <p>Photographes, décorateurs, traiteurs, lieux, DJs — pour bâtir le réseau fermé Babi Wedding Phase 1.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h4>Franck Boris<br/>Kombe</h4>
+            <p class="signature">Fondateur · Babi Wedding</p>
+
+            <div class="contact-row">
+              <span class="contact-row__label">Email</span>
+              <span class="contact-row__value">franck@babiwedding.com</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label">WhatsApp</span>
+              <span class="contact-row__value">+225 07 00 00 00 00</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label">Web</span>
+              <span class="contact-row__value">babiwedding.com</span>
+            </div>
+            <div class="contact-row">
+              <span class="contact-row__label">Lieu</span>
+              <span class="contact-row__value">Abidjan, Cocody</span>
+            </div>
+
+            <p class="closing-tagline">
+              <em>Conçu avec amour à Abidjan.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide__footer">
+        <span class="brand-mark">BABI WEDDING · MERCI</span>
+        <span class="pg">12 / 12</span>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
