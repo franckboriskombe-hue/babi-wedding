@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 110" role="img" aria-label="Babi Wedding">
+  <defs>
+    <linearGradient id="gold-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0C896"/>
+      <stop offset="55%" stop-color="#C8A66A"/>
+      <stop offset="100%" stop-color="#9C7E45"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(8, 36)" fill="url(#gold-l)">
+    <path d="M16 0 L18.5 13.5 L32 16 L18.5 18.5 L16 32 L13.5 18.5 L0 16 L13.5 13.5 Z"/>
+  </g>
+  <text x="56" y="58"
+        font-family="'Cormorant Garamond', 'Times New Roman', serif"
+        font-style="italic" font-weight="500" font-size="58"
+        fill="#F8F4ED" letter-spacing="-1">Babi</text>
+  <rect x="56" y="72" width="240" height="0.8" fill="url(#gold-l)"/>
+  <text x="56" y="94"
+        font-family="'Montserrat', sans-serif"
+        font-weight="600" font-size="14"
+        fill="#F8F4ED" letter-spacing="9">WEDDING</text>
+</svg>

@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Univers Graphique · Babi Wedding</title>
+  <meta name="description" content="Le système de design Babi Wedding : couleurs, typographie, composants, principes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/monogram.svg" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/monogram.svg" alt="" />
+        <span class="brand-text"><span class="b-name">Babi</span><span class="b-tag">Wedding</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Accueil</a></li>
+          <li><a class="nav-link" href="packs.html">Packs</a></li>
+          <li><a class="nav-link" href="quiz.html">Quiz</a></li>
+          <li><a class="nav-link" href="conciergerie.html">Conciergerie</a></li>
+          <li><a class="nav-link" href="magazine.html">Magazine</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold btn--sm">Réserver un appel</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main style="padding-top: 130px;">
+    <div class="container">
+
+      <!-- HERO -->
+      <header class="reveal" style="padding-bottom: var(--space-7);">
+        <span class="eyebrow">Univers graphique</span>
+        <h1 style="font-size: var(--fs-display); line-height: 0.95;">Le système <em style="font-style: italic; color: var(--color-emerald)">Babi Wedding.</em></h1>
+        <p class="lede" style="max-width: 720px; margin-top: var(--space-5)">
+          Un vocabulaire visuel pensé pour incarner trois piliers : <em>African Luxury</em>, <em>Modern Romance</em>, <em>Digital Elegance</em>. Tokens, typographie, composants — tout repose sur ces fondations.
+        </p>
+      </header>
+
+      <!-- LOGO -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">01 · Logo &amp; identité</div>
+        <h2 class="ds-section__heading">Le wordmark</h2>
+        <div class="grid grid-2" style="align-items: center;">
+          <div style="padding: var(--space-9); background: var(--color-ivory); border-radius: var(--radius-md);">
+            <img src="assets/img/logo.svg" alt="Logo Babi Wedding" style="max-width: 100%; height: auto;" />
+          </div>
+          <div>
+            <p style="color: var(--text-secondary)">Composition en trois temps :</p>
+            <ul style="margin-block: var(--space-3); padding-left: var(--space-4);">
+              <li style="margin-bottom: var(--space-2)"><strong>« Babi »</strong> en Cormorant Garamond italique — l'âme, le territoire (le surnom d'Abidjan)</li>
+              <li style="margin-bottom: var(--space-2)"><strong>Filet doré</strong> séparateur — la signature de prestige</li>
+              <li><strong>« WEDDING »</strong> en Montserrat SemiBold espacé — la promesse moderne et professionnelle</li>
+            </ul>
+            <p style="color: var(--text-secondary)">L'étoile à 8 branches dorée évoque les motifs traditionnels akan, transposée en accent décoratif universel.</p>
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: var(--fs-h4); margin-top: var(--space-7); margin-bottom: var(--space-4);">Variantes</h3>
+        <div class="grid grid-3">
+          <div style="padding: var(--space-6); background: var(--color-ivory); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; min-height: 140px;">
+            <img src="assets/img/logo.svg" style="width: 220px;" alt="Logo couleur" />
+          </div>
+          <div style="padding: var(--space-6); background: var(--color-emerald); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; min-height: 140px;">
+            <img src="assets/img/logo-light.svg" style="width: 220px;" alt="Logo clair" />
+          </div>
+          <div style="padding: var(--space-6); background: var(--color-ink); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; min-height: 140px;">
+            <img src="assets/img/monogram.svg" style="width: 90px;" alt="Monogramme" />
+          </div>
+        </div>
+      </section>
+
+      <!-- COULEURS -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">02 · Palette</div>
+        <h2 class="ds-section__heading">Couleurs de marque</h2>
+        <p style="max-width: 56ch; color: var(--text-secondary); margin-bottom: var(--space-6);">Cinq couleurs principales, héritées du brief client. Chacune incarne une intention émotionnelle.</p>
+
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch" style="background: #005B4F; color: #F8F4ED;">
+            <div class="ds-swatch__name">Vert Émeraude</div>
+            <div class="ds-swatch__code">#005B4F · Confiance · Primaire</div>
+          </div>
+          <div class="ds-swatch" style="background: #E87B24; color: #F8F4ED;">
+            <div class="ds-swatch__name">Orange Safran</div>
+            <div class="ds-swatch__code">#E87B24 · Énergie · Accent</div>
+          </div>
+          <div class="ds-swatch" style="background: #F8F4ED; color: #111; border: 1px solid #E8DFCC;">
+            <div class="ds-swatch__name">Ivoire</div>
+            <div class="ds-swatch__code">#F8F4ED · Fond principal</div>
+          </div>
+          <div class="ds-swatch" style="background: #C8A66A; color: #111;">
+            <div class="ds-swatch__name">Or Champagne</div>
+            <div class="ds-swatch__code">#C8A66A · Prestige · Luxe</div>
+          </div>
+          <div class="ds-swatch" style="background: #111; color: #F8F4ED;">
+            <div class="ds-swatch__name">Noir Profond</div>
+            <div class="ds-swatch__code">#111111 · Texte · Luxe</div>
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: var(--fs-h4); margin-top: var(--space-7); margin-bottom: var(--space-4);">Nuances étendues</h3>
+        <div class="ds-swatch-grid">
+          <div class="ds-swatch" style="background: #003F37; color: #F8F4ED; min-height: 140px;"><div class="ds-swatch__name">Emerald deep</div><div class="ds-swatch__code">#003F37</div></div>
+          <div class="ds-swatch" style="background: #E6EEEC; color: #003F37; min-height: 140px;"><div class="ds-swatch__name">Emerald mist</div><div class="ds-swatch__code">#E6EEEC</div></div>
+          <div class="ds-swatch" style="background: #F2EBDD; color: #111; min-height: 140px;"><div class="ds-swatch__name">Ivory warm</div><div class="ds-swatch__code">#F2EBDD</div></div>
+          <div class="ds-swatch" style="background: #E0C896; color: #111; min-height: 140px;"><div class="ds-swatch__name">Champagne light</div><div class="ds-swatch__code">#E0C896</div></div>
+          <div class="ds-swatch" style="background: #FCEFE3; color: #B85F18; min-height: 140px;"><div class="ds-swatch__name">Saffron soft</div><div class="ds-swatch__code">#FCEFE3</div></div>
+          <div class="ds-swatch" style="background: #6B6B6B; color: #F8F4ED; min-height: 140px;"><div class="ds-swatch__name">Ink muted</div><div class="ds-swatch__code">#6B6B6B</div></div>
+        </div>
+      </section>
+
+      <!-- TYPOGRAPHIE -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">03 · Typographie</div>
+        <h2 class="ds-section__heading">Système typographique</h2>
+
+        <div class="grid grid-2" style="margin-bottom: var(--space-7);">
+          <div style="padding: var(--space-6); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <p style="font-size: var(--fs-overline); letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--color-champagne-deep); margin-bottom: var(--space-2)">Display · Serif</p>
+            <h3 style="font-family: var(--font-display); font-size: 3.5rem; line-height: 1; margin: 0;">Cormorant Garamond</h3>
+            <p style="font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--text-muted); margin-top: var(--space-2)">L'art d'organiser des mariages inoubliables.</p>
+            <p style="font-size: var(--fs-caption); color: var(--text-muted); margin-top: var(--space-4)">Usage : titres éditoriaux, citations, accents émotionnels. Italique = signature.</p>
+          </div>
+          <div style="padding: var(--space-6); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+            <p style="font-size: var(--fs-overline); letter-spacing: var(--tracking-overline); text-transform: uppercase; color: var(--color-champagne-deep); margin-bottom: var(--space-2)">Sans · Body</p>
+            <h3 style="font-family: var(--font-sans); font-weight: 600; font-size: 2rem; line-height: 1.1; margin: 0;">Montserrat SemiBold</h3>
+            <p style="font-family: var(--font-sans); font-size: 1.125rem; color: var(--text-secondary); margin-top: var(--space-3); line-height: 1.6">Lecture confortable, navigation claire. Pour les paragraphes, les boutons, la nav.</p>
+            <p style="font-size: var(--fs-caption); color: var(--text-muted); margin-top: var(--space-4)">Usage : corps, navigation, boutons, eyebrows, labels.</p>
+          </div>
+        </div>
+
+        <h3 style="font-family: var(--font-display); font-size: var(--fs-h4); margin-bottom: var(--space-4);">Échelle</h3>
+        <div>
+          <div class="ds-type"><div class="ds-type__label">--fs-display · clamp(3.5rem · 7.5rem)</div><div class="display">Display</div></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-h1</div><h1 style="margin: 0">Titre H1</h1></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-h2</div><h2 style="margin: 0">Titre H2</h2></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-h3</div><h3 style="margin: 0">Titre H3</h3></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-h4</div><h4 style="margin: 0">Titre H4</h4></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-body-lg</div><p style="font-size: var(--fs-body-lg); margin: 0">Body large — pour la lede d'un article.</p></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-body</div><p style="margin: 0">Body — la taille standard de lecture.</p></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-caption</div><p style="font-size: var(--fs-caption); margin: 0">Caption — méta-info, hints.</p></div>
+          <div class="ds-type"><div class="ds-type__label">--fs-overline</div><span class="eyebrow">Eyebrow / Overline</span></div>
+        </div>
+      </section>
+
+      <!-- ESPACEMENT -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">04 · Espacement</div>
+        <h2 class="ds-section__heading">Échelle 4-point</h2>
+        <p style="max-width: 56ch; color: var(--text-secondary); margin-bottom: var(--space-5);">Toutes les marges et paddings suivent une progression géométrique douce.</p>
+        <div class="ds-spacing">
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-1</span><span style="min-width: 60px; color: var(--text-muted)">4px</span><div class="ds-spacing__bar" style="width: 4px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-2</span><span style="min-width: 60px; color: var(--text-muted)">8px</span><div class="ds-spacing__bar" style="width: 8px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-3</span><span style="min-width: 60px; color: var(--text-muted)">12px</span><div class="ds-spacing__bar" style="width: 12px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-4</span><span style="min-width: 60px; color: var(--text-muted)">16px</span><div class="ds-spacing__bar" style="width: 16px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-5</span><span style="min-width: 60px; color: var(--text-muted)">24px</span><div class="ds-spacing__bar" style="width: 24px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-6</span><span style="min-width: 60px; color: var(--text-muted)">32px</span><div class="ds-spacing__bar" style="width: 32px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-7</span><span style="min-width: 60px; color: var(--text-muted)">48px</span><div class="ds-spacing__bar" style="width: 48px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-8</span><span style="min-width: 60px; color: var(--text-muted)">64px</span><div class="ds-spacing__bar" style="width: 64px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-9</span><span style="min-width: 60px; color: var(--text-muted)">96px</span><div class="ds-spacing__bar" style="width: 96px;"></div></div>
+          <div class="ds-spacing__row"><span style="min-width: 80px;">--space-10</span><span style="min-width: 60px; color: var(--text-muted)">128px</span><div class="ds-spacing__bar" style="width: 128px;"></div></div>
+        </div>
+      </section>
+
+      <!-- COMPOSANTS -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">05 · Composants</div>
+        <h2 class="ds-section__heading">Boutons</h2>
+        <div class="ds-grid">
+          <div class="ds-card"><div class="ds-card__demo"><button class="btn">Primaire</button></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.btn — émeraude</p></div>
+          <div class="ds-card"><div class="ds-card__demo"><button class="btn btn--gold">Or champagne</button></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.btn--gold</p></div>
+          <div class="ds-card"><div class="ds-card__demo"><button class="btn btn--saffron">Safran</button></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.btn--saffron</p></div>
+          <div class="ds-card"><div class="ds-card__demo"><button class="btn btn--whatsapp">WhatsApp</button></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.btn--whatsapp</p></div>
+          <div class="ds-card"><div class="ds-card__demo"><button class="btn btn--ghost">Ghost</button></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.btn--ghost</p></div>
+          <div class="ds-card"><div class="ds-card__demo"><a class="link-arrow" href="#">Link arrow <span class="arrow">→</span></a></div><p style="font-size: var(--fs-caption); color: var(--text-muted); margin: 0;">.link-arrow</p></div>
+        </div>
+
+        <h2 class="ds-section__heading" style="margin-top: var(--space-7);">Badges</h2>
+        <div class="cluster">
+          <span class="badge badge--gold">Le plus choisi</span>
+          <span class="badge badge--emerald">Premium</span>
+          <span class="badge badge--saffron">Nouveau</span>
+        </div>
+
+        <h2 class="ds-section__heading" style="margin-top: var(--space-7);">Cartes pack (extrait)</h2>
+        <div class="grid grid-2" style="max-width: 720px;">
+          <article class="pack-card">
+            <span class="pack-card__tier">Silver</span>
+            <h3 class="pack-card__title">L'Équilibre</h3>
+            <div class="pack-card__price">5M <small>FCFA</small></div>
+            <ul class="pack-card__list">
+              <li>Pour 100 à 150 invités</li>
+              <li>Scénographie sur-mesure</li>
+              <li>Photo + vidéo éditoriale</li>
+            </ul>
+          </article>
+          <article class="pack-card pack-card--featured">
+            <span class="pack-card__badge">Le plus choisi</span>
+            <span class="pack-card__tier">Gold</span>
+            <h3 class="pack-card__title">Le Signature</h3>
+            <div class="pack-card__price">10M <small>FCFA</small></div>
+            <ul class="pack-card__list">
+              <li>Direction artistique complète</li>
+              <li>Coordination 360°</li>
+              <li>Production audiovisuelle</li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 class="ds-section__heading" style="margin-top: var(--space-7);">Inputs &amp; choix</h2>
+        <div class="grid grid-2">
+          <div>
+            <div class="field" style="margin-bottom: var(--space-4)">
+              <label class="field__label">Champ texte</label>
+              <input class="input" placeholder="Aïcha" />
+            </div>
+            <div class="field" style="margin-bottom: var(--space-4)">
+              <label class="field__label">Select</label>
+              <select class="select"><option>Civil</option><option>Traditionnel</option><option>Religieux</option></select>
+            </div>
+            <div class="field">
+              <label class="field__label">Textarea</label>
+              <textarea class="textarea" placeholder="Parlez-nous de votre vision..."></textarea>
+            </div>
+          </div>
+          <div>
+            <div class="choice-grid" style="grid-template-columns: 1fr 1fr;">
+              <label class="choice"><input type="radio" name="ds-c" checked /><span class="choice__title">Royal Akan</span><span class="choice__desc">Or, émeraude, faste</span></label>
+              <label class="choice"><input type="radio" name="ds-c" /><span class="choice__title">Moderne chic</span><span class="choice__desc">Épuré, monochrome</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ICONOGRAPHIE -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">06 · Iconographie</div>
+        <h2 class="ds-section__heading">Style minimal · trait 1.6px</h2>
+        <p style="max-width: 56ch; color: var(--text-secondary); margin-bottom: var(--space-5);">Toutes les icônes utilisent un trait fin uniforme (1.6px à 24×24), des coins légèrement arrondis, et un vocabulaire géométrique. Couleur héritée du contexte.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--space-3);">
+          <div style="padding: var(--space-5); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald)" stroke-width="1.6" width="32" height="32" style="margin: 0 auto var(--space-2);"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div style="font-size: var(--fs-caption); color: var(--text-muted);">Horloge</div>
+          </div>
+          <div style="padding: var(--space-5); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald)" stroke-width="1.6" width="32" height="32" style="margin: 0 auto var(--space-2);"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4 4-7 8-7s8 3 8 7"/></svg>
+            <div style="font-size: var(--fs-caption); color: var(--text-muted);">Profil</div>
+          </div>
+          <div style="padding: var(--space-5); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald)" stroke-width="1.6" width="32" height="32" style="margin: 0 auto var(--space-2);"><path d="M3 7l9 6 9-6M3 7v10h18V7"/></svg>
+            <div style="font-size: var(--fs-caption); color: var(--text-muted);">Email</div>
+          </div>
+          <div style="padding: var(--space-5); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald)" stroke-width="1.6" width="32" height="32" style="margin: 0 auto var(--space-2);"><path d="M4 11h16l-1 9H5z"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <div style="font-size: var(--fs-caption); color: var(--text-muted);">Panier</div>
+          </div>
+          <div style="padding: var(--space-5); background: var(--color-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); text-align: center;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-emerald)" stroke-width="1.6" width="32" height="32" style="margin: 0 auto var(--space-2);"><circle cx="12" cy="13" r="4"/><path d="M5 7h4l2-3h2l2 3h4v12H5z"/></svg>
+            <div style="font-size: var(--fs-caption); color: var(--text-muted);">Photo</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MOTION -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">07 · Motion</div>
+        <h2 class="ds-section__heading">Cinétique douce</h2>
+        <div class="grid grid-3">
+          <div class="ds-card">
+            <div class="ds-card__demo" style="font-family: ui-monospace, monospace; font-size: var(--fs-caption);">cubic-bezier(0.16, 1, 0.3, 1)</div>
+            <p style="font-size: var(--fs-caption); margin: 0;"><strong>--ease-out</strong> · expo · pour reveal scroll</p>
+          </div>
+          <div class="ds-card">
+            <div class="ds-card__demo" style="font-family: ui-monospace, monospace; font-size: var(--fs-caption);">320ms</div>
+            <p style="font-size: var(--fs-caption); margin: 0;"><strong>--dur-base</strong> · hover boutons / cartes</p>
+          </div>
+          <div class="ds-card">
+            <div class="ds-card__demo" style="font-family: ui-monospace, monospace; font-size: var(--fs-caption);">1200ms</div>
+            <p style="font-size: var(--fs-caption); margin: 0;"><strong>--dur-cinematic</strong> · hero zoom, parallaxes</p>
+          </div>
+        </div>
+        <p style="margin-top: var(--space-5); color: var(--text-muted); font-size: var(--fs-body-sm); max-width: 56ch;">Toutes les animations sont désactivées automatiquement si l'utilisateur a activé <code>prefers-reduced-motion</code>.</p>
+      </section>
+
+      <!-- PRINCIPES -->
+      <section class="ds-section reveal">
+        <div class="ds-section__title">08 · Principes</div>
+        <h2 class="ds-section__heading">Cinq règles non-négociables</h2>
+        <div class="grid grid-2">
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">01 · Aérée, jamais vide</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">L'espace blanc est un luxe. Chaque section respire, chaque titre a la place de résonner.</p>
+          </div>
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">02 · Italique pour l'émotion</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">Le serif italique souligne les moments forts. À utiliser avec parcimonie pour préserver l'impact.</p>
+          </div>
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">03 · L'or pour le prestige</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">Le champagne est un accent, pas un fond. Filets, soulignés, gradients fins — jamais des aplats lourds.</p>
+          </div>
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">04 · Photographie cinématique</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">Format portrait privilégié, grain doux, palette désaturée. Les couples au cœur, l'objet en arrière-plan.</p>
+          </div>
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">05 · Africain, jamais folklorique</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">Les motifs bogolan, les pagnes Akan, la richesse traditionnelle — toujours filtrés par une grille moderne, jamais en surdose.</p>
+          </div>
+          <div class="ds-card">
+            <h3 style="font-family: var(--font-display); margin: 0 0 var(--space-2);">06 · Digital, jamais froid</h3>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted); margin: 0">Toute interaction doit respirer la chaleur. WhatsApp accessible partout, langage doux, micro-attentions.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <section class="cta-banner" style="margin-top: var(--space-9);">
+      <div class="container">
+        <span class="eyebrow" style="color: var(--color-champagne-light)">Cohérence visuelle</span>
+        <h2 class="cta-banner__title">Toute la marque, <em>en un seul fichier.</em></h2>
+        <p class="cta-banner__lede">Les tokens vivent dans <code>tokens.css</code>. Modifiez une variable, tout le site se met à jour.</p>
+        <div class="cluster" style="justify-content: center;">
+          <a href="index.html" class="btn btn--gold btn--lg">Voir la maquette</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <div class="site-footer__brand">Babi Wedding<small>The African Wedding Ecosystem</small></div>
+          <p style="color: rgba(248,244,237,0.6); font-size: var(--fs-body-sm); max-width: 320px;">Conciergerie premium pour mariages mémorables. Abidjan · Yamoussoukro · Bouaké · Dakar · Lomé.</p>
+        </div>
+        <div><h4>Découvrir</h4><ul class="stack-sm"><li><a href="index.html">Accueil</a></li><li><a href="packs.html">Tous les packs</a></li><li><a href="quiz.html">Quiz mariage</a></li><li><a href="conciergerie.html">Conciergerie</a></li><li><a href="magazine.html">Magazine</a></li></ul></div>
+        <div><h4>L'écosystème</h4><ul class="stack-sm"><li><a href="#">Concierge</a></li><li><a href="#">Marketplace</a></li><li><a href="#">Academy</a></li><li><a href="#">Premium</a></li><li><a href="design-system.html">Design System</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="stack-sm"><li><a href="https://wa.me/2250700000000">WhatsApp +225 07 00 00 00 00</a></li><li><a href="mailto:hello@babiwedding.com">hello@babiwedding.com</a></li><li><a href="contact.html">Prendre rendez-vous</a></li><li style="color: rgba(248,244,237,0.5)">Cocody · Abidjan</li></ul></div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span id="current-year"></span> Babi Wedding. Tous droits réservés.</span>
+        <span>Conçu avec ❤ à Abidjan</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

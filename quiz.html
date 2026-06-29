@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quel mariage rêvez-vous ? · Babi Wedding</title>
+  <meta name="description" content="5 questions pour trouver le pack de mariage qui vous correspond. Babi Wedding vous recommande votre cérémonie idéale en moins de 3 minutes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/monogram.svg" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/monogram.svg" alt="" />
+        <span class="brand-text"><span class="b-name">Babi</span><span class="b-tag">Wedding</span></span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Accueil</a></li>
+          <li><a class="nav-link" href="packs.html">Packs</a></li>
+          <li><a class="nav-link" href="quiz.html">Quiz</a></li>
+          <li><a class="nav-link" href="conciergerie.html">Conciergerie</a></li>
+          <li><a class="nav-link" href="magazine.html">Magazine</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--gold btn--sm">Réserver un appel</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quiz-shell">
+    <div class="container-text">
+
+      <div style="text-align: center; margin-bottom: var(--space-7);" class="reveal">
+        <span class="eyebrow">Quiz Babi Wedding</span>
+        <h1 style="font-size: var(--fs-h1); line-height: 1; margin-bottom: var(--space-3)">Quel mariage <em style="font-style: italic; color: var(--color-emerald)">rêvez-vous ?</em></h1>
+        <p class="lede" style="margin: 0 auto;">Cinq questions, deux minutes. À la fin, votre pack idéal et un budget orchestré.</p>
+      </div>
+
+      <div data-quiz>
+        <!-- Progress -->
+        <div class="quiz-progress">
+          <div class="quiz-progress__bar is-active"></div>
+          <div class="quiz-progress__bar"></div>
+          <div class="quiz-progress__bar"></div>
+          <div class="quiz-progress__bar"></div>
+          <div class="quiz-progress__bar"></div>
+        </div>
+
+        <!-- STEP 1 : CÉRÉMONIE -->
+        <div class="quiz-step is-active">
+          <div class="quiz-step__num">Étape 01 / 05</div>
+          <h2 class="quiz-step__title">Quel type de cérémonie envisagez-vous ?</h2>
+          <p class="quiz-step__lede">En Côte d'Ivoire, on peut tout faire — l'important c'est de savoir où votre cœur penche.</p>
+
+          <div class="choice-grid">
+            <label class="choice">
+              <input type="radio" name="ceremony" value="civil" />
+              <span class="choice__title">Civil</span>
+              <span class="choice__desc">Mairie, intime ou avec reception</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="ceremony" value="traditionnel" />
+              <span class="choice__title">Traditionnel</span>
+              <span class="choice__desc">Dot, pagnes, ballets, racines</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="ceremony" value="religieux" />
+              <span class="choice__title">Religieux</span>
+              <span class="choice__desc">Église, mosquée, bénédiction</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="ceremony" value="complet" checked />
+              <span class="choice__title">Les trois</span>
+              <span class="choice__desc">Le mariage complet ivoirien</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- STEP 2 : BUDGET -->
+        <div class="quiz-step">
+          <div class="quiz-step__num">Étape 02 / 05</div>
+          <h2 class="quiz-step__title">Quel est votre budget global ?</h2>
+          <p class="quiz-step__lede">Soyez à l'aise. Babi Wedding orchestre des mariages de 2 à 50 millions FCFA. On adaptera la proposition à votre enveloppe — sans jamais sacrifier la qualité.</p>
+
+          <div class="range-field">
+            <div class="range-field__display">
+              <span class="field__label" style="margin-bottom: 0;">Votre budget</span>
+              <span id="budget-value" class="range-field__value">5 000 000 FCFA</span>
+            </div>
+            <input type="range" id="budget" class="range" min="2000000" max="50000000" step="500000" value="5000000" />
+            <div class="range-field__bounds"><span>2M FCFA</span><span>50M+ FCFA</span></div>
+            <p class="field__hint" style="margin-top: var(--space-3)">Acompte de 30% à la signature, solde 10 jours avant le jour J.</p>
+          </div>
+        </div>
+
+        <!-- STEP 3 : INVITÉS -->
+        <div class="quiz-step">
+          <div class="quiz-step__num">Étape 03 / 05</div>
+          <h2 class="quiz-step__title">Combien d'invités voulez-vous accueillir ?</h2>
+          <p class="quiz-step__lede">Du dîner intime aux 500 invités d'une grande cérémonie ivoirienne, on s'adapte. Choisissez la jauge qui vous ressemble.</p>
+
+          <div class="range-field">
+            <div class="range-field__display">
+              <span class="field__label" style="margin-bottom: 0;">Invités</span>
+              <span id="guests-value" class="range-field__value">150 invités</span>
+            </div>
+            <input type="range" id="guests" class="range" min="20" max="500" step="10" value="150" />
+            <div class="range-field__bounds"><span>20 invités</span><span>500+ invités</span></div>
+          </div>
+        </div>
+
+        <!-- STEP 4 : VILLE -->
+        <div class="quiz-step">
+          <div class="quiz-step__num">Étape 04 / 05</div>
+          <h2 class="quiz-step__title">Où aura lieu votre mariage ?</h2>
+          <p class="quiz-step__lede">Babi Wedding opère dans toute la Côte d'Ivoire et certaines villes francophones. Notre marketplace référence des prestataires vérifiés dans chaque destination.</p>
+
+          <div class="choice-grid">
+            <label class="choice"><input type="radio" name="city" value="Abidjan" checked /><span class="choice__title">Abidjan</span><span class="choice__desc">Cocody, Plateau, Riviera, Bingerville</span></label>
+            <label class="choice"><input type="radio" name="city" value="Yamoussoukro" /><span class="choice__title">Yamoussoukro</span><span class="choice__desc">Capitale, Basilique, lieux d'apparat</span></label>
+            <label class="choice"><input type="radio" name="city" value="Bouaké" /><span class="choice__title">Bouaké</span><span class="choice__desc">Centre, événements de grande ampleur</span></label>
+            <label class="choice"><input type="radio" name="city" value="Grand-Bassam" /><span class="choice__title">Grand-Bassam</span><span class="choice__desc">Plage, patrimoine UNESCO</span></label>
+            <label class="choice"><input type="radio" name="city" value="San-Pédro" /><span class="choice__title">San-Pédro</span><span class="choice__desc">Côte, palmeraies tropicales</span></label>
+            <label class="choice"><input type="radio" name="city" value="Autre" /><span class="choice__title">Autre / Diaspora</span><span class="choice__desc">France, Dakar, Lomé...</span></label>
+          </div>
+        </div>
+
+        <!-- STEP 5 : STYLE -->
+        <div class="quiz-step">
+          <div class="quiz-step__num">Étape 05 / 05</div>
+          <h2 class="quiz-step__title">Quel style éditorial vous fait vibrer ?</h2>
+          <p class="quiz-step__lede">Chaque style se décline dans tous les packs. Si vous hésitez, ne vous inquiétez pas — votre conseiller affinera avec vous.</p>
+
+          <div class="choice-grid">
+            <label class="choice">
+              <input type="radio" name="style" value="Royal Akan" checked />
+              <span class="choice__title">Royal Akan</span>
+              <span class="choice__desc">Or, émeraude, pagnes royaux, faste</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="style" value="Moderne chic" />
+              <span class="choice__title">Moderne chic</span>
+              <span class="choice__desc">Épuré, lignes pures, monochrome</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="style" value="Tropical luxe" />
+              <span class="choice__title">Tropical luxe</span>
+              <span class="choice__desc">Palmes, manguiers, doré, sunset</span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="style" value="Éditorial épuré" />
+              <span class="choice__title">Éditorial épuré</span>
+              <span class="choice__desc">Photo magazine, minimal, élégant</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="quiz-actions">
+          <button type="button" class="btn btn--ghost" data-quiz-prev>← Précédent</button>
+          <button type="button" class="btn" data-quiz-next>Continuer →</button>
+        </div>
+
+        <!-- RESULT (rendered by JS) -->
+        <div data-quiz-result></div>
+      </div>
+
+      <div style="text-align: center; margin-top: var(--space-9); padding-top: var(--space-6); border-top: 1px solid var(--border-subtle);">
+        <p class="quote" style="font-size: var(--fs-h6);">"Le rêve d'un mariage, ce sont d'abord cinq questions. Les réponses, on les construit ensemble."</p>
+        <div class="divider center"></div>
+        <p style="font-size: var(--fs-caption); color: var(--text-muted); letter-spacing: var(--tracking-wider); text-transform: uppercase;">— Équipe Babi Wedding</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__cols">
+        <div>
+          <div class="site-footer__brand">Babi Wedding<small>The African Wedding Ecosystem</small></div>
+          <p style="color: rgba(248,244,237,0.6); font-size: var(--fs-body-sm); max-width: 320px;">Conciergerie premium pour mariages mémorables. Abidjan · Yamoussoukro · Bouaké · Dakar · Lomé.</p>
+        </div>
+        <div><h4>Découvrir</h4><ul class="stack-sm"><li><a href="index.html">Accueil</a></li><li><a href="packs.html">Tous les packs</a></li><li><a href="quiz.html">Quiz mariage</a></li><li><a href="conciergerie.html">Conciergerie</a></li><li><a href="magazine.html">Magazine</a></li></ul></div>
+        <div><h4>L'écosystème</h4><ul class="stack-sm"><li><a href="#">Concierge</a></li><li><a href="#">Marketplace</a></li><li><a href="#">Academy</a></li><li><a href="#">Premium</a></li><li><a href="design-system.html">Design System</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="stack-sm"><li><a href="https://wa.me/2250700000000">WhatsApp +225 07 00 00 00 00</a></li><li><a href="mailto:hello@babiwedding.com">hello@babiwedding.com</a></li><li><a href="contact.html">Prendre rendez-vous</a></li><li style="color: rgba(248,244,237,0.5)">Cocody · Abidjan</li></ul></div>
+      </div>
+      <div class="site-footer__bottom">
+        <span>© <span id="current-year"></span> Babi Wedding. Tous droits réservés.</span>
+        <span>Conçu avec ❤ à Abidjan</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2250700000000" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.1.2 2 3 4.8 4.3 1.7.7 2.3.8 3.2.6.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.2-.3-.2-.5-.4z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.7.5 3.4 1.3 4.9L2 22l5.2-1.4c1.5.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.3c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.9-3.1-.2-.3c-.9-1.4-1.3-3-1.3-4.6 0-4.5 3.7-8.2 8.2-8.2s8.2 3.7 8.2 8.2-3.6 8.6-8 8.6z"/></svg>
+  </a>
+
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>
